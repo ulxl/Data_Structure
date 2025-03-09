@@ -1,10 +1,12 @@
 package Forum.encapsulation;
 
 public class AkunBank {
+    // Atribut private untuk enkapsulasi
     private String nomorRekening;
     private double saldo;
     private String namaPemilik;
 
+    // Constructor
     public AkunBank(String nomorRekening, String namaPemilik, double saldoAwal) {
         this.nomorRekening = nomorRekening;
         this.namaPemilik = namaPemilik;
@@ -15,24 +17,29 @@ public class AkunBank {
         }
     }
 
+    // Getter untuk nomor rekening
     public String getNomorRekening() {
         return nomorRekening;
     }
 
+    // Getter untuk nama pemilik
     public String getNamaPemilik() {
         return namaPemilik;
     }
 
+    // Setter untuk nama pemilik dengan validasi
     public void setNamaPemilik(String namaPemilik) {
         if (namaPemilik != null && !namaPemilik.trim().isEmpty()) {
             this.namaPemilik = namaPemilik;
         }
     }
 
+    // Getter untuk saldo
     public double getSaldo() {
         return saldo;
     }
 
+    // Method untuk deposit
     public void deposit(double jumlah) {
         if (jumlah > 0) {
             saldo += jumlah;
@@ -42,6 +49,7 @@ public class AkunBank {
         }
     }
 
+    // Method untuk withdraw
     public void withdraw(double jumlah) {
         if (jumlah > 0 && jumlah <= saldo) {
             saldo -= jumlah;

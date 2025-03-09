@@ -1,3 +1,4 @@
+package Forum;
 // Superclass
 class PerangkatRumahTangga {
     String merek;
